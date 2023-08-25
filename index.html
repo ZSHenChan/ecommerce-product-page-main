@@ -36,13 +36,13 @@
       <img class="image-switching-button" id="next-button" src="images/icon-next.svg" alt="next-button">
     </section>
     <section class="details">
-      <h3>Sneaker Company</h3>
-      <h2>Fall Limited Edition Sneakers</h2>
-      <p>  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-        durable rubber outer sole, they’ll withstand everything the weather can offer.
-      </p>
-    </section>
-    <form action="">
+      <div class="description">
+        <h3>Sneaker Company</h3>
+        <h2>Fall Limited Edition Sneakers</h2>
+        <p>  These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+      </div>
       <div class="price">
         <div class="price-left">
           <span id="discounted-price">$125.00</span>
@@ -52,10 +52,18 @@
           <span id="original-price">$250.00</span>
         </div>
       </div>
-      <div class="quantity"></div>
-      <button></button>
-    </form>
-    
+      <form action="">
+        <div class="quantity">
+          <img src="images/icon-minus.svg" alt="minus">
+          <p id="">0</p>
+          <img src="images/icon-plus.svg" alt="plus">
+        </div>
+        <button>
+          <img src="images/icon-cart.svg" alt="cart-logo">
+          <p>Add to cart</p>
+        </button>
+      </form>
+    </section>
     
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
