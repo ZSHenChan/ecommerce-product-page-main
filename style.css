@@ -159,6 +159,24 @@ header h1{
     height: 0.3rem;
 }
 
+.add-items-to-cart-confirmation-message{
+    font-size: 1rem;
+    background-color: hsl(26, 100%, 55%, 50%);
+    color: white;
+    text-align: center;
+
+    padding: 0.4rem;
+    border-radius: 1rem;
+    width: 80%;
+    
+    position: fixed;
+    bottom:2rem;
+    left:50%;
+    transform: translateX(-50%);
+
+    display: none;
+}
+
 button{
     display: flex;
     flex-direction: row;

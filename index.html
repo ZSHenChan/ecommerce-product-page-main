@@ -20,6 +20,7 @@
 </head>
 <body>
   <main>
+
     <header>
       <div class="header header-left">
         <img src="images/icon-menu.svg" alt="menu-icon">
@@ -31,17 +32,19 @@
         <img id="user-avatar" src="images/image-avatar.png" alt="avatar">
       </div>
     </header>
+
     <section class="content">
       <img id="product-image" src="images/image-product-1.jpg" alt="product-image">
       <img class="image-switching-button" id="previous-button" src="images/icon-previous.svg" alt="previous-button" onclick="prevImg()">
       <img class="image-switching-button" id="next-button" src="images/icon-next.svg" alt="next-button" onclick="nextImg()">
     </section>
+
     <section class="details">
       <div class="description">
         <h3>Sneaker Company</h3>
         <h2>Fall Limited Edition Sneakers</h2>
-        <p>  These low-profile sneakers are your perfect casual wear companion. Featuring a
-          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they'll withstand everything the weather can offer.
         </p>
       </div>
       <div class="price">
@@ -53,18 +56,21 @@
           <span id="original-price">$250.00</span>
         </div>
       </div>
-      <form action="">
-        <div class="quantity">
-          <img id="minus" src="images/icon-minus.svg" alt="minus" onclick="minusQuantity()">
-          <p id="shoe-quantity">0</p>
-          <img id="plus" src="images/icon-plus.svg" alt="plus" onclick="addQuantity()">
-        </div>
-        <button type="submit">
-          <img src="images/icon-cart.svg" alt="cart-logo">
-          <p>Add to cart</p>
-        </button>
-      </form>
+      <div class="quantity">
+        <img id="minus" src="images/icon-minus.svg" alt="minus" onclick="minusQuantity()">
+        <p id="shoe-quantity">0</p>
+        <img id="plus" src="images/icon-plus.svg" alt="plus" onclick="addQuantity()">
+      </div>
+      <button onclick="addItemsToCart()">
+        <img src="images/icon-cart.svg" alt="cart-logo">
+        <p>Add to cart</p>
+      </button>
+
+      <div class="add-items-to-cart-confirmation-message">
+        <p>Items have been added to your cart</p>
+      </div>
     </section>
+
     
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
