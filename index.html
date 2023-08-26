@@ -26,14 +26,15 @@
         <h1>sneakers</h1>
       </div>
       <div class="header header-right">
-        <img src="images/icon-cart.svg" alt="cart-icon">
+        <img id="cart" src="images/icon-cart.svg" alt="cart-icon">
+        <p id="cart-quantity"></p>
         <img id="user-avatar" src="images/image-avatar.png" alt="avatar">
       </div>
     </header>
     <section class="content">
       <img id="product-image" src="images/image-product-1.jpg" alt="product-image">
-      <img class="image-switching-button" id="previous-button" src="images/icon-previous.svg" alt="previous-button">
-      <img class="image-switching-button" id="next-button" src="images/icon-next.svg" alt="next-button">
+      <img class="image-switching-button" id="previous-button" src="images/icon-previous.svg" alt="previous-button" onclick="prevImg()">
+      <img class="image-switching-button" id="next-button" src="images/icon-next.svg" alt="next-button" onclick="nextImg()">
     </section>
     <section class="details">
       <div class="description">
@@ -54,11 +55,11 @@
       </div>
       <form action="">
         <div class="quantity">
-          <img src="images/icon-minus.svg" alt="minus">
-          <p id="">0</p>
-          <img src="images/icon-plus.svg" alt="plus">
+          <img id="minus" src="images/icon-minus.svg" alt="minus" onclick="minusQuantity()">
+          <p id="shoe-quantity">0</p>
+          <img id="plus" src="images/icon-plus.svg" alt="plus" onclick="addQuantity()">
         </div>
-        <button>
+        <button type="submit">
           <img src="images/icon-cart.svg" alt="cart-logo">
           <p>Add to cart</p>
         </button>
@@ -67,7 +68,7 @@
     
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">PieApplePie</a>.
     </div>
   </main>
 </body>
