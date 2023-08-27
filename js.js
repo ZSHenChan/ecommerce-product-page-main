@@ -1,6 +1,8 @@
+const menu = document.querySelector(".menu");
 let displayImage = document.getElementById("product-image");
 const displayImages = ['images/image-product-1.jpg','images/image-product-2.jpg','images/image-product-3.jpg','images/image-product-4.jpg'];
 let imgInd = 0;
+const numImgs = 4;
 
 //tracking quantity to buy
 const shoeQuantity = document.getElementById("shoe-quantity")
@@ -12,9 +14,18 @@ let cart = {};
 let cartQuantityTracking = 0;
 const addItemsToCartConfirmationMessage = document.getElementById("add-items-to-cart-confirmation-message");
 
+function menuBar(){
+    if (menu.style.display=="none"){
+        menu.style.display="block";
+    }
+    else{
+        menu.style.display="none";
+    }
+}
+
 //image switching
 function nextImg() {
-    imgInd = (imgInd+1)%4;
+    imgInd = (imgInd+1)%numImgs;
     displayImage.src = displayImages[imgInd];
 }
 function prevImg() {
@@ -25,7 +36,6 @@ function prevImg() {
         displayImage.src = displayImages[3];
         imgInd=3;
     }
-    console.log(imgInd);
 }
 
 //adjusting quantity
@@ -40,7 +50,6 @@ function minusQuantity(){
 
 //add items into cart
 function addItemsToCart(){
-    console.log(shoeQuantityTracking);
     if (shoeQuantityTracking>0){
         cartQuantity.innerHTML=++cartQuantityTracking;
         cartQuantity.style.display="block";
@@ -48,9 +57,10 @@ function addItemsToCart(){
         shoeQuantity.innerHTML = shoeQuantityTracking = 0;
 
         //show confirmation message
-        addItemsToCartConfirmationMessage.style.display="block";
+        addItemsToCartConfirmationMessage.style.zIndex = "1";
+        addItemsToCartConfirmationMessage.classList.add("elementToFadeInAndOut");
+        setTimeout(function(){addItemsToCartConfirmationMessage.classList.remove("elementToFadeInAndOut")},2000)
+        addItemsToCartConfirmationMessage.style.zIndex = "-1";
         //edit dictionaries
-
-
     }
 }

@@ -14,7 +14,7 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
+    .attribution { min-height: 50vh; font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
@@ -23,13 +23,20 @@
 
     <header>
       <div class="header header-left">
-        <img src="images/icon-menu.svg" alt="menu-icon">
+        <img onclick="menuBar()" id="menu" src="images/icon-menu.svg" alt="menu-icon">
         <h1>sneakers</h1>
       </div>
       <div class="header header-right">
         <img id="cart" src="images/icon-cart.svg" alt="cart-icon">
         <p id="cart-quantity"></p>
         <img id="user-avatar" src="images/image-avatar.png" alt="avatar">
+      </div>
+      <div class="menu">
+        <h3>Collections</h3>
+        <p>Men</p>
+        <p>Women</p>
+        <p>About</p>
+        <p>Contact</p>
       </div>
     </header>
 
@@ -66,12 +73,11 @@
         <p>Add to cart</p>
       </button>
 
-      <div class="add-items-to-cart-confirmation-message">
+      <div id="add-items-to-cart-confirmation-message">
         <p>Items have been added to your cart</p>
       </div>
     </section>
 
-    
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="#">PieApplePie</a>.
