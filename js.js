@@ -10,9 +10,20 @@ let shoeQuantityTracking= 0;
 
 //tracking items in the cart
 const cartQuantity = document.getElementById("cart-quantity");
-let cart = {};
+const cartDetails = document.querySelector(".cart-top");
+let cart = [];
 let cartQuantityTracking = 0;
 const addItemsToCartConfirmationMessage = document.getElementById("add-items-to-cart-confirmation-message");
+const cartDetailsDisplay = document.querySelector(".cart-details");
+
+const product = [
+    {
+        id: 1,
+        image: 'images/image-product-1-thumbnail.jpg',
+        title: 'Fall Limited Edition Sneakers',
+        quantity: 0,
+    }
+]
 
 function menuBar(){
     if (menu.style.display=="none"){
@@ -38,6 +49,16 @@ function prevImg() {
     }
 }
 
+//display cart details
+function openCart()
+{
+    if (cartDetailsDisplay.style.display=="none"){
+        cartDetailsDisplay.style.display="block";
+    }
+    else{
+        cartDetailsDisplay.style.display="none";
+    }
+}
 //adjusting quantity
 function addQuantity(){
     shoeQuantity.innerHTML = ++shoeQuantityTracking;
@@ -49,10 +70,15 @@ function minusQuantity(){
 }
 
 //add items into cart
-function addItemsToCart(){
+function addItemsToCart(a){
     if (shoeQuantityTracking>0){
         cartQuantity.innerHTML=++cartQuantityTracking;
         cartQuantity.style.display="block";
+
+        //add items to cart list
+        cart.splice(0,0,{...product[a-1]});
+        cart[0]['quantity']=shoeQuantityTracking;
+
         //clear quantity
         shoeQuantity.innerHTML = shoeQuantityTracking = 0;
 
@@ -61,6 +87,38 @@ function addItemsToCart(){
         addItemsToCartConfirmationMessage.classList.add("elementToFadeInAndOut");
         setTimeout(function(){addItemsToCartConfirmationMessage.classList.remove("elementToFadeInAndOut")},2000)
         addItemsToCartConfirmationMessage.style.zIndex = "-1";
-        //edit dictionaries
+    
+        displayCart();
     }
+}
+
+function delItem(a){
+    cart.splice(a,1);
+    cartQuantity.innerHTML=--cartQuantityTracking;
+    displayCart();
+}
+
+function displayCart(){
+     let j=0;
+     if(cart.length==0){
+        cartDetails.innerHTML = "Your cart is empty";
+     }
+     else{
+        cartDetails.innerHTML = cart.map((items)=>
+        {
+            let {id,image,title,quantity}=items;
+            return(
+                `<div class="in-cart-item">
+                <img src=${image} alt="product-${id}-thumbnail">
+                <div class="items-in-cart">
+                  <div class="in-cart-item-right">
+                    <h3>${title}</h3>
+                    <div class="in-cart-item-quantity"><span>Quantity: </span><span>${quantity}</span></div>
+                    <button onclick='delItem("${j++}")'>Remove</button>
+                  </div>
+                </div>
+              </div>`
+            );
+        }).join('');
+     }
 }

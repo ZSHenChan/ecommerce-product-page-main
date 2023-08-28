@@ -60,6 +60,7 @@ header h1{
     height: 2rem;
 }
 
+/* menu icon details */
 .menu{
     position: absolute;
     background-color: white;
@@ -82,6 +83,60 @@ header h1{
     background-color: hsl(25, 100%, 94%);
 }
 
+/* cart icon details */
+.cart-details{
+    position:absolute;
+    right: 0;
+    top:3.75rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0 0 0 2rem;
+
+    display: flex;
+    flex-direction: column;
+
+    display: none;
+}
+.cart-top{
+    margin-bottom: 1rem;
+}
+.in-cart-item{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+.cart-details img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+.cart-details h3{
+    font-size: 1rem;
+}
+.in-cart-item button{
+    height: 1.3rem;
+    max-width: 5rem;
+}
+.in-cart-item-quantity{
+    font-size: 0.8rem;
+}
+.in-cart-item-right{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.in-cart-item-quantity{
+    display: flex;
+    flex-direction: row;
+}
+#cart-check-out{
+    width:90%;
+    display: flex;
+    height: 1.8rem;
+}
+
+/* product description */
 .content{
     display: flex;
     justify-content: center;
@@ -225,6 +280,9 @@ button{
     color: white;
     z-index: 0;
 }
+button:hover{
+    background-color:hsl(26, 100%, 80%);
+}
 button img{
     margin-right: 1rem;
     width:1rem;
@@ -232,4 +290,47 @@ button img{
 
 .details button img{
     color: white;
+}
+
+@media(min-width: 700px){
+    main{
+        padding: 0 2rem;
+    }
+    #menu{
+        display: none;
+    }
+    .menu{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+        left:auto;
+        top:auto;
+        background-color: transparent;
+    }
+    .header{
+        padding: 1rem 2rem;
+        border-bottom: solid 0.02rem hsl(219, 9%, 45%);
+    }
+    .header h1{
+        margin-right: 2.5rem;
+    }
+    .header{
+        line-height: 1rem;
+    }
+    .menu p{
+        box-sizing: border-box;
+        height: 100%;
+        padding: 0 1rem;
+    }
+    .menu p:hover{
+        background-color: transparent;
+    }
+    #cart{
+        margin-right: 1rem;
+    }
+    #user-avatar{
+        margin: 0;
+    }
 }

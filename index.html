@@ -25,19 +25,24 @@
       <div class="header header-left">
         <img onclick="menuBar()" id="menu" src="images/icon-menu.svg" alt="menu-icon">
         <h1>sneakers</h1>
+        <div class="menu">
+          <p>Collections</p>
+          <p>Men</p>
+          <p>Women</p>
+          <p>About</p>
+          <p>Contact</p>
+        </div>
       </div>
       <div class="header header-right">
-        <img id="cart" src="images/icon-cart.svg" alt="cart-icon">
+        <img id="cart" src="images/icon-cart.svg" alt="cart-icon" onclick="openCart()">
         <p id="cart-quantity"></p>
         <img id="user-avatar" src="images/image-avatar.png" alt="avatar">
       </div>
-      <div class="menu">
-        <h3>Collections</h3>
-        <p>Men</p>
-        <p>Women</p>
-        <p>About</p>
-        <p>Contact</p>
+      <div class="cart-details">
+        <div class="cart-top">Your cart is empty</div>
+        <button id="cart-check-out">Check Out</button>
       </div>
+      
     </header>
 
     <section class="content">
@@ -68,7 +73,7 @@
         <p id="shoe-quantity">0</p>
         <img id="plus" src="images/icon-plus.svg" alt="plus" onclick="addQuantity()">
       </div>
-      <button onclick="addItemsToCart()">
+      <button onclick="addItemsToCart(1)">
         <img src="images/icon-cart.svg" alt="cart-logo">
         <p>Add to cart</p>
       </button>
