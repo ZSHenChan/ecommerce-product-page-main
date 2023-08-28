@@ -48,6 +48,9 @@ function prevImg() {
         imgInd=3;
     }
 }
+function displayImg(index){
+    displayImage.src = displayImages[index];
+}
 
 //display cart details
 function openCart()
@@ -83,10 +86,10 @@ function addItemsToCart(a){
         shoeQuantity.innerHTML = shoeQuantityTracking = 0;
 
         //show confirmation message
-        addItemsToCartConfirmationMessage.style.zIndex = "1";
+        // addItemsToCartConfirmationMessage.style.display = "flex";
         addItemsToCartConfirmationMessage.classList.add("elementToFadeInAndOut");
         setTimeout(function(){addItemsToCartConfirmationMessage.classList.remove("elementToFadeInAndOut")},2000)
-        addItemsToCartConfirmationMessage.style.zIndex = "-1";
+        // addItemsToCartConfirmationMessage.style.display = "none";
     
         displayCart();
     }
