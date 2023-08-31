@@ -36,20 +36,44 @@ function menuBar(){
 
 //image switching
 function nextImg() {
-    imgInd = (imgInd+1)%numImgs;
-    displayImage.src = displayImages[imgInd];
+    imgInd = (++imgInd)%numImgs;
+    lightBoxdisplayImage.src = displayImages[imgInd];
 }
 function prevImg() {
     if (imgInd!=0){
-        displayImage.src = displayImages[--imgInd];
+        displaylightBoxdisplayImageImage.src = displayImages[--imgInd];
     }
     else{
-        displayImage.src = displayImages[3];
+        lightBoxdisplayImage.src = displayImages[3];
         imgInd=3;
     }
 }
 function displayImg(index){
     displayImage.src = displayImages[index];
+}
+
+//lightbox image switching
+let lightBoxdisplayImage = document.getElementById("lightbox-product-image");
+let lightboxImgInd = 0;
+
+function lightboxNextImg() {
+    lightboxImgInd = (++lightboxImgInd)%numImgs;
+    lightBoxdisplayImage.src = displayImages[lightboxImgInd];
+}
+function lightboxPrevImg() {
+    if (lightboxImgInd!=0){
+        lightBoxdisplayImage.src = displayImages[--lightboxImgInd];
+    }
+    else{
+        lightBoxdisplayImage.src = displayImages[3];
+        lightboxImgInd=3;
+    }
+}
+function lightboxDisplayImg(index){
+    lightBoxdisplayImage.src = displayImages[index];
+}
+function selectedImgOpacity(index){
+    
 }
 
 //display cart details

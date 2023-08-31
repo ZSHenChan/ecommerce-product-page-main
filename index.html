@@ -47,7 +47,7 @@
 
     <div class="container">
       <section class="content">
-        <img id="product-image" src="images/image-product-1.jpg" alt="product-image">
+        <a href="#pop-up-img"><img id="product-image" src="images/image-product-1.jpg" alt="product-image"></a>
         <img class="image-switching-button" id="previous-button" src="images/icon-previous.svg" alt="previous-button" onclick="prevImg()">
         <img class="image-switching-button" id="next-button" src="images/icon-next.svg" alt="next-button" onclick="nextImg()">
         <div class="thumbnails">
@@ -56,6 +56,21 @@
           <img src="images/image-product-3-thumbnail.jpg" alt="thumbnail-3" onclick="displayImg(2)">
           <img src="images/image-product-4-thumbnail.jpg" alt="thumbnail-4" onclick="displayImg(3)">
         </div>
+      </section>
+
+      <!-- lightbox design -->
+      <section class="lightbox" id="pop-up-img"> 
+        <span class="lightbox-content">
+          <a href="#"><img id="lightbox-product-image" src="images/image-product-1.jpg" alt="product-image"></a>
+          <img class="image-switching-button" id="lightbox-previous-button" src="images/icon-previous.svg" alt="previous-button" onclick="lightboxPrevImg()">
+          <img class="image-switching-button" id="lightbox-next-button" src="images/icon-next.svg" alt="next-button" onclick="lightboxNextImg()">
+          <div class="thumbnails lightboxThumbnails">
+            <img src="images/image-product-1-thumbnail.jpg" alt="thumbnail-1" onclick="lightboxDisplayImg(0)">
+            <img src="images/image-product-2-thumbnail.jpg" alt="thumbnail-2" onclick="lightboxDisplayImg(1)">
+            <img src="images/image-product-3-thumbnail.jpg" alt="thumbnail-3" onclick="lightboxDisplayImg(2)">
+            <img src="images/image-product-4-thumbnail.jpg" alt="thumbnail-4" onclick="lightboxDisplayImg(3)">
+          </div>
+        </span>
       </section>
       
       <section class="details">
