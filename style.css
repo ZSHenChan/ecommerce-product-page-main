@@ -317,12 +317,12 @@ button img{
         top:auto;
         background-color: transparent;
     }
-    .header{
-        padding: 1rem 6rem;
-        /* border-bottom: solid 0.02rem hsl(219, 9%, 45%); */
+    header{
+        border-bottom: solid 0.02rem hsl(219, 9%, 45%);
+        margin: 1rem 4rem 0 4rem;
     }
     .header h1{
-        margin-right: 2rem;
+        margin-right: 1rem;
     }
     .header{
         line-height: 1rem;
@@ -330,7 +330,7 @@ button img{
     .menu p{
         box-sizing: border-box;
         height: 100%;
-        padding: 0 0.5rem;
+        padding: 0 0.4rem;
     }
     .menu p:hover{
         background-color: transparent;
@@ -352,7 +352,7 @@ button img{
         width: 90%;
         display: flex;
         justify-self: center;
-        margin: 4rem;
+        margin: 2rem
     }
 
     /* lightbox */
@@ -457,7 +457,7 @@ button img{
         max-width: 6rem;
     }
     .details{
-        padding: 4rem 2rem;
+        padding: 4rem 3rem;
         margin-top: 2rem;
         margin-right: 2rem;
     }
